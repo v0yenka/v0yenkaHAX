@@ -98,27 +98,75 @@ namespace SSO_Library_Test
 
         private void SetupGUI()
         {
-            this.Text = "v0yenka hax";
-            this.Size = new System.Drawing.Size(400, 380);
-            this.StartPosition = FormStartPosition.CenterScreen;
+            Color bgColor = Color.FromArgb(13, 2, 8);
+            Color neonPink = Color.FromArgb(255, 0, 255);
+            Color textColor = Color.White;
 
-            Label lbl = new Label() { Text = "Scripts:", Top = 15, Left = 20, Width = 200, Font = new Font("Arial", 10, FontStyle.Bold) };
+            this.Text = "★v0yenka hax★";
+            this.Size = new System.Drawing.Size(420, 500);
+            this.BackColor = bgColor;
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+
+            Label lbl = new Label()
+            {
+                Text = ">> SCRIPT INJECTOR",
+                Top = 15,
+                Left = 20,
+                Width = 300,
+                ForeColor = neonPink,
+                Font = new Font("Consolas", 15, FontStyle.Bold)
+            };
             this.Controls.Add(lbl);
 
-            TxtScript = new TextBox() { Top = 40, Left = 20, Width = 340, Height = 80, Multiline = true, Font = new Font("Consolas", 10) };
-            TxtScript.Text = "global/Horse.AddRelativeForce(0,1,2.5f);"; // Horse flying script (just for testing)
+            TxtScript = new TextBox()
+            {
+                Top = 45,
+                Left = 20,
+                Width = 360,
+                Height = 120,
+                Multiline = true,
+                BackColor = Color.FromArgb(25, 25, 25),
+                ForeColor = Color.White,
+                BorderStyle = BorderStyle.FixedSingle,
+                Font = new Font("Consolas", 10)
+            };
+            TxtScript.Text = "global/Horse.AddRelativeForce(0,1,2.5f);"; // Just a default script for testing
             this.Controls.Add(TxtScript);
 
-            BtnHack = new Button() { Text = "HACK", Top = 140, Left = 20, Width = 340, Height = 50, BackColor = Color.LightGreen, Font = new Font("Arial", 12, FontStyle.Bold) };
+            BtnHack = new Button()
+            {
+                Text = "EXECUTE",
+                Top = 180,
+                Left = 20,
+                Width = 360,
+                Height = 60,
+                FlatStyle = FlatStyle.Flat,
+                BackColor = bgColor,
+                ForeColor = neonPink,
+                Font = new Font("Consolas", 12, FontStyle.Bold)
+            };
+            BtnHack.FlatAppearance.BorderColor = neonPink;
+            BtnHack.FlatAppearance.BorderSize = 2;
             BtnHack.Click += BtnHack_Click;
             this.Controls.Add(BtnHack);
 
-            BtnRestore = new Button() { Text = "RESTORE", Top = 200, Left = 20, Width = 340, Height = 40, BackColor = Color.LightSalmon, Font = new Font("Arial", 10, FontStyle.Bold) };
+            BtnRestore = new Button()
+            {
+                Text = "RESTORE ORIGINAL",
+                Top = 255,
+                Left = 20,
+                Width = 360,
+                Height = 60,
+                FlatStyle = FlatStyle.Flat,
+                BackColor = bgColor,
+                ForeColor = neonPink,
+                Font = new Font("Consolas", 12, FontStyle.Bold)
+            };
+            BtnRestore.FlatAppearance.BorderColor = neonPink;
+            BtnRestore.FlatAppearance.BorderSize = 2;
             BtnRestore.Click += BtnRestore_Click;
             this.Controls.Add(BtnRestore);
-
-            StatusLabel = new Label() { Text = "Ready to use", Top = 260, Left = 20, Width = 340, Font = new Font("Arial", 9) };
-            this.Controls.Add(StatusLabel);
         }
     }
 }
